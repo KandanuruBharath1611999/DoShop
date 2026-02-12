@@ -46,7 +46,7 @@ const Jackets = () => {
 
     return (
         <div className="Navbelow">
-            <h2 className="category-heading">Jacket's Collection</h2>
+            <h2 className="category-heading">Jackets Collection</h2>
             <div className="InnerCon">
                 {filteredData.map((category) =>
                     category.items.map((item) => (
