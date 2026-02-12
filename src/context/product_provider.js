@@ -28,7 +28,13 @@ export const pulldb = async () =>
         return(
         mp.data())
     })
-    
+
+    tot.forEach((category) => {
+        if (category.items) {
+            category.items.sort((a, b) => a.price - b.price);
+        }
+    });
+
     return tot
 }
 
