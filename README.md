@@ -56,3 +56,9 @@ The build is minified and optimized for best performance. Filenames include hash
 ---
 
 **Bee Clothing** is a growing project. Contributions are welcome to improve functionality and enhance the user experience!
+
+---
+
+## Author
+
+**Bharath**

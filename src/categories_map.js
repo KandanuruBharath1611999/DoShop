@@ -14,7 +14,7 @@ const Categories  =
     imageUrl: hats,
   },
   {
-    name:"Jacket",
+    name:"Jackets",
     id:2,
     imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
   },

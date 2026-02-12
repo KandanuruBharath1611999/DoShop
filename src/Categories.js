@@ -14,7 +14,7 @@ const Category = (props) =>
         {
             navigate('/Shopping/Hats');
         }
-        if(name === "Jacket")
+        if(name === "Jackets")
         {
             navigate('/Shopping/Jackets');
         }
