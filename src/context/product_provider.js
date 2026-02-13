@@ -31,7 +31,7 @@ export const pulldb = async () =>
 
     tot.forEach((category) => {
         if (category.items) {
-            category.items.sort((a, b) => a.price - b.price);
+            category.items.sort((a, b) => b.price - a.price);
         }
     });
 
