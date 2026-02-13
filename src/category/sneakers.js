@@ -9,12 +9,24 @@ import './category.css';
 const Sneakers = () => {
     const { shopData } = useContext(ProductContext);
     const [addCart, setAddCart] = useState("");
+    const [sortOrder, setSortOrder] = useState("desc");
     const { setCount, count, dispatch,state} = useContext(CartContext);
     
     const details = useSelector((state) => state.details)
 
     const mouseOver = (event) => {
         setAddCart(event);
+    };
+
+    const sortItemsByPrice = (items) => {
+        const sortedItems = [...items];
+        if (sortOrder === "asc") {
+            sortedItems.sort((a, b) => a.price - b.price);
+        } else {
+            sortedItems.sort((a, b) => b.price - a.price);
+        }
+
+        return sortedItems;
     };
 
     const addCartButton = async (obj) => {
@@ -49,9 +61,23 @@ const Sneakers = () => {
     return (
         <div className="Navbelow">
             <h2 className="category-heading">Sneaker's Collection</h2>
+            <div className="sort-controls">
+                <label className="sort-label" htmlFor="sneakers-sort">
+                    Sort by price:
+                </label>
+                <select
+                    id="sneakers-sort"
+                    className="sort-select"
+                    value={sortOrder}
+                    onChange={(event) => setSortOrder(event.target.value)}
+                >
+                    <option value="asc">Low to High</option>
+                    <option value="desc">High to Low</option>
+                </select>
+            </div>
             <div className="InnerCon">
                 {filteredData.map((category) =>
-                    category.items.map((item) => (
+                    sortItemsByPrice(category.items).map((item) => (
                         <div onMouseOver={() => mouseOver(item.imageUrl)} onMouseLeave={()=>{ setAddCart()}} key={item.id} className="shopping-item">
                             <Fragment>
                                 <div className="image-container">
